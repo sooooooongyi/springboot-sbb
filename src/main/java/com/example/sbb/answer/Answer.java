@@ -1,6 +1,7 @@
 package com.example.sbb.answer;
 
 import java.time.LocalDateTime;
+import com.example.sbb.user.SiteUser;
 
 import org.springframework.data.annotation.CreatedDate;
 
@@ -32,4 +33,7 @@ public class Answer {
 
   @ManyToOne
   private Question question;
+
+  @ManyToOne
+  private SiteUser author;
 }
