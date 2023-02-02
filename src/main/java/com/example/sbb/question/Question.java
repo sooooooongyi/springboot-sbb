@@ -6,6 +6,7 @@ import jakarta.persistence.ManyToOne;
 import com.example.sbb.user.SiteUser;
 
 import com.example.sbb.answer.Answer;
+import org.springframework.data.annotation.CreatedDate;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -32,7 +33,9 @@ public class Question {
   @Column(columnDefinition = "TEXT")
   private String content;
 
+  @CreatedDate
   private LocalDateTime createDate;
+  private LocalDateTime modifyDate;
 
   @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
   private List<Answer> answerList;
